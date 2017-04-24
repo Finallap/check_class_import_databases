@@ -89,7 +89,7 @@
 		$pdo->exec("set names utf8"); 
 
 		$input_information=$pdo->prepare('INSERT INTO `check_class`.`course_class_information` (`course_class_id`, `school_year`, `term`, `class_id`, `course_id`) VALUES (NULL, :school_year, :term, :class_id,:course_id);');
-		$input_information->bindValue(':school_year',"2016-2017");
+		$input_information->bindValue(':school_year',"2016-17");
 		$input_information->bindValue(':term',"2");
 		$input_information->bindValue(':course_id',$course_id);
 		
