@@ -11,8 +11,7 @@
         $port=3306;
 
         $dsn="mysql:dbname=$dbname;host=$host;port=$port";
-        $user='root';
-        $password='root';
+	    include("./database.php");
 
         $pdo=new PDO($dsn,$user,$password); 
         $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
