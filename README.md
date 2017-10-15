@@ -35,13 +35,13 @@
 * 修改根目录中的“database.php”文件，改成本地计算机数据库的用户名和密码。
 * 命令行登录数据库，创建一个名为“check_class”的数据库，并切换至此库。
 * 在数据库中执行本系统根目录下的“SQLExample.sql”文件创建表结构。
-* 访问“http://localhost/phpmyadmin/”，将“check_class”数据库中所有表中的数据清空等待录入新的数据。
-* 将修改好的“classroom.xls”文件放在根目录下（替换原有的“classroom.xls”），并执行“http://localhost/classroom.php“录入教室信息。
+* 访问"http://localhost/phpmyadmin/".将“check_class”数据库中所有表中的数据清空等待录入新的数据。
+* 将修改好的“classroom.xls”文件放在根目录下（替换原有的“classroom.xls”），并执行"http://localhost/classroom.php".录入教室信息。
 * 将整理好的一堆教室课表文件都放置在根目录下（再次强调文件名格式要符合要求）。
 * 将“cell_analyse.php”文件226和227行中学期和学年改成要导入文件所对应的学期和学年。
 * 将“class_analyse.php”文件92和93行的学期和学年按照上一行的要求进行更改。
-* 执行“http://localhost/execl_analyse.php”.
-* 执行“http://localhost/choise_analyse.php”.
+* 执行"http://localhost/execl_analyse.php".
+* 执行"http://localhost/choise_analyse.php".
 
 ### 3.其它
 
