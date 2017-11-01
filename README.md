@@ -16,6 +16,10 @@
 
 教室课表，形如现有class_table文件目录下的内容（貌似不需要导入三牌楼的数据？），不支持中文文件名，要批量改名参照[这里](https://jingyan.baidu.com/article/656db918a7e848e381249c0e.html)；将带括号的教室文件保留一个（1）并命名为教室号（不带括号的部分）。注意，所有教室文件名都必须保持”1-401.xls“这种格式(所有文件名都不带括号)。
 
+### 4.新生班级信息——根目录下的文件名为“class.xls”的文件
+
+新生的班级信息，有每个班级的专业、学院和班级的编号。把目录名类似“2017-2018-1 2017级班级课表定稿”的目录下的“2-2017-2018-1 2017级班级目录.xls”文件中的内容改成形如根目录下“class.xls”文件，再将改好的文件替换掉根目录下的“class.xls”文件。
+
 ## 二、导入数据
 
 ### 1.大致流程
@@ -34,7 +38,7 @@
 * 打开xampp并启动apache和mysql，将本系统放在网站根目录下。
 * 修改根目录中的“database.php”文件，改成本地计算机数据库的用户名和密码。
 * 命令行登录数据库，创建一个名为“check_class”的数据库，并切换至此库。
-* 在数据库中执行本系统根目录下的“SQLExample.sql”文件创建表结构。
+* 在数据库中执行本系统根目录下的“SQLExample.sql”文件创建表结构（有导入班级信息所要使用的学院数据，如果云数据库中学院数据“college_information”表中的数据有改动，即和sql文件中的数据不同，就要手动将本地数据库中的此表数据更新到云数据库的版本）。
 * 访问“ http://localhost/phpmyadmin/ ” ，将“check_class”数据库中所有表中的数据清空等待录入新的数据。
 * 将修改好的“classroom.xls”文件放在根目录下（替换原有的“classroom.xls”），并执行“ http://localhost/classroom.php “ 录入教室信息。
 * 将整理好的一堆教室课表文件都放置在根目录下（再次强调文件名格式要符合要求）。
@@ -42,6 +46,10 @@
 * 将“class_analyse.php”文件92和93行的学期和学年按照上一行的要求进行更改。
 * 执行“ http://localhost/execl_analyse.php ”.
 * 执行“ http://localhost/choise_analyse.php ”.
+* 执行“ http://localhost/class_info_analyse.php ”.
+* 导出数据库为sql文件。**注意，云数据库中“class_information”表只要添加新数据，原有的数据不要修改，即修改导出的sql对表“class_information”表相关的语句只保留“INSERT INTO ...”这句即可。**
+* 将导出的sql文件（再次强调“class_information”表中的数据只需要添加，原有数据不要修改）上传到云并导入。
+* 完成。
 
 ### 3.其它
 
